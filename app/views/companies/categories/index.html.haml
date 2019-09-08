@@ -1,0 +1,7 @@
+%h2 Categories
+
+%ul
+  - @categories.each do |category|
+    %li
+      %a{href: companies_category_companies_path(category)}= category.name
+      %hr

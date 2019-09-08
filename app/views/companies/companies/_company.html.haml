@@ -1,0 +1,17 @@
+= content_tag :li do
+  %p 
+    %strong Name: 
+    #{company.name}
+  %p 
+    %strong Category: 
+    #{company.company_category.name}
+  %p 
+    %strong Phone Number: 
+    #{company.phone_number}
+  %p 
+    %strong Website: 
+    #{company.website}
+  %p 
+    %strong Description: 
+    #{company.description}
+%hr

@@ -1,0 +1,18 @@
+%h2 User Details
+%p Name: #{@user.name}
+%p Email: #{@user.email}
+
+%hr
+
+%h2 Company Details
+%p Name: #{@company.name}
+%p Category: #{@company.company_category.name}
+%p Phone Number: #{@company.phone_number}
+%p Website: #{@company.website}
+%p Description: #{@company.description}
+
+
+= link_to('Logout', destroy_user_session_path, method: :delete)
+%br
+%br
+%a{href: companies_categories_path} Company Categories

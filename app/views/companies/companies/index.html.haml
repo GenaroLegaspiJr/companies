@@ -1,0 +1,11 @@
+%h2 #{@category.name} Companies
+
+- if @companies.present?
+  %ul
+    = render partial: "companies/companies/company", collection: @companies, as: :company
+- else
+  No Companies Found
+%br
+%br
+
+%a{href: companies_categories_path} Back

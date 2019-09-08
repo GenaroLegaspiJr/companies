@@ -1,0 +1,21 @@
+class ApplicationController < ActionController::Base
+	before_action :configure_permitted_parameters, if: :devise_controller?
+
+  protected
+
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :company_name, :company_category, :phone_number, :website, :description])
+  end
+
+  def after_sign_in_path_for(resource)
+    users_user_path(resource)
+  end
+
+  def after_sign_out_path_for(resource_or_scope)
+    redirect_to root_url
+  end
+
+  def after_sign_up_path_for(resource)
+    users_user_path(resource)
+  end
+end
